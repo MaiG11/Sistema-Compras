@@ -23,14 +23,15 @@
     <input type="number" th:field="*{preco}" step="0.01" required>
     <br><br>
 
-    <label>Categoria:</label>
-    <select th:field="*{categoria}">
+   <label>Categoria:</label>
+    <select th:field="*{categoria.id}" required>
         <option value="">Selecione...</option>
-        <option th:each="categoria : ${categorias}"
-                th:value="${categoria.id}"
-                th:text="${categoria.nome}">
+        <option th:each="cat : ${categorias}"
+            th:value="${cat.id}"
+            th:text="${cat.nome}">
         </option>
     </select>
+
     <br><br>
 
     <button type="submit" class="botao">Salvar</button>

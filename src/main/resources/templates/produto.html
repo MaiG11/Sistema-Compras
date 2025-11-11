@@ -20,11 +20,13 @@
             <th>Nome</th>
             <th>Preço</th>
             <th>Categoria</th>
+           <th>Ações</th>
         </tr>
         <tr th:each="produto : ${produtos}">
         <td th:text="${produto.id}"></td>
         <td th:text="${produto.nome}"></td>
         <td th:text="${produto.preco}"></td>
+        <td th:text="${produto.categoria.nome}"></td>
     <td>
        <a th:href="@{/produto/editar/{id}(id=${produto.id})}" class="btn">Editar</a>
        <a th:href="@{/produto/excluir/{id}(id=${produto.id})}" class="btn btn-delete">Excluir</a>
