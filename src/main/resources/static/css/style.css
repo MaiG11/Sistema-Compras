@@ -1,0 +1,102 @@
+/* COR DE FUNDO GERAL */
+body {
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 30px;
+}
+
+/* TÍTULOS */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #1d6fa5;
+}
+
+/* BOTÕES */
+.botao {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background-color: #1d6fa5;
+}
+
+/* TABELAS */
+.tabela {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 70%;
+}
+
+.tabela th, .tabela td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.tabela th {
+    background-color: #ecf0f1;
+}
+
+/* FORMULÁRIOS */
+.formulario {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* ======== BOTÕES DE AÇÃO (EDITAR E EXCLUIR) ======== */
+
+/* Estilo geral dos botões */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    background-color: #007bff; /* azul padrão */
+    transition: background-color 0.3s ease;
+}
+
+/* Quando o mouse passa por cima */
+.btn:hover {
+    background-color: #0056b3; /* azul mais escuro */
+}
+
+/* Botão de excluir */
+.btn-delete {
+    background-color: #dc3545; /* vermelho */
+}
+
+.btn-delete:hover {
+    background-color: #a71d2a; /* vermelho escuro */
+}
+
+/* Botão de editar */
+.btn-edit {
+    background-color: #28a745; /* verde */
+}
+
+.btn-edit:hover {
+    background-color: #1c7c31; /* verde escuro */
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Produtos</title>
+
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <h1>Lista de Produtos</h1>
+
+    <a th:href="@{/produto/novo}" class="botao">Cadastrar Novo Produto</a>
+    <br><br>
+
+    <table class="tabela">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+        </tr>
+        <tr th:each="produto : ${produtos}">
+        <td th:text="${produto.id}"></td>
+        <td th:text="${produto.nome}"></td>
+        <td th:text="${produto.preco}"></td>
+    <td>
+       <a th:href="@{/produto/editar/{id}(id=${produto.id})}" class="btn">Editar</a>
+       <a th:href="@{/produto/excluir/{id}(id=${produto.id})}" class="btn btn-delete">Excluir</a>
+
+
+    </td>
+</tr>
+
+    </table>
+
+    <br>
+    <a th:href="@{/categoria}" class="link-voltar">Ir para categorias</a>
+
+</body>
+</html>
