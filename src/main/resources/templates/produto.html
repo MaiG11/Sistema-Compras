@@ -25,13 +25,11 @@
         <tr th:each="produto : ${produtos}">
         <td th:text="${produto.id}"></td>
         <td th:text="${produto.nome}"></td>
-        <td th:text="${produto.preco}"></td>
+        <td class="preco" th:text="${'R$ ' + #numbers.formatDecimal(produto.preco, 1, 'POINT', 2, 'COMMA')}"></td>
         <td th:text="${produto.categoria.nome}"></td>
     <td>
        <a th:href="@{/produto/editar/{id}(id=${produto.id})}" class="btn">Editar</a>
        <a th:href="@{/produto/excluir/{id}(id=${produto.id})}" class="btn btn-delete">Excluir</a>
-
-
     </td>
 </tr>
 

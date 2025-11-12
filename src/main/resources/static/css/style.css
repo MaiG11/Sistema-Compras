@@ -182,3 +182,11 @@ input:focus, select:focus {
 * {
     transition: all 0.2s ease-in-out;
 }
+.preco {
+    font-weight: bold;
+    color: #c0392b;
+}
+.preco:hover {
+    color: #e74c3c;
+    transform: scale(1.05);
+}
