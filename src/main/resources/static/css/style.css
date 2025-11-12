@@ -1,102 +1,184 @@
-/* COR DE FUNDO GERAL */
+/* ======== ESTILO GERAL ======== */
 body {
-    background-color: #f5f7fa;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff5f7, #f9e2e7);
+    font-family: "Poppins", Arial, sans-serif;
     color: #333;
     text-align: center;
     margin: 30px;
 }
 
-/* TÍTULOS */
+/* ======== TÍTULOS ======== */
 h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
+    color: #c0392b;
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(192, 57, 43, 0.2);
 }
 
-/* LINKS */
+/* ======== LINKS ======== */
 a {
     text-decoration: none;
-    color: #3498db;
+    color: #e74c3c;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #1d6fa5;
+    color: #b52b1a;
+    transform: scale(1.05);
 }
 
-/* BOTÕES */
+/* ======== BOTÕES PRINCIPAIS ======== */
 .botao {
-    background-color: #3498db;
+    background: linear-gradient(135deg, #e74c3c, #ff758c);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 12px 24px;
+    border-radius: 25px;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.25);
+    transition: all 0.3s ease;
 }
 
 .botao:hover {
-    background-color: #1d6fa5;
+    background: linear-gradient(135deg, #c0392b, #ff4d6d);
+    transform: scale(1.07);
+    box-shadow: 0 6px 12px rgba(192, 57, 43, 0.35);
 }
 
-/* TABELAS */
+/* ======== TABELAS ======== */
 .tabela {
     margin: 0 auto;
     border-collapse: collapse;
-    width: 70%;
+    width: 85%;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .tabela th, .tabela td {
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 1px solid #f0f0f0;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 15px;
 }
 
 .tabela th {
-    background-color: #ecf0f1;
+    background: linear-gradient(135deg, #fde0e6, #f8ccd3);
+    color: #c0392b;
+    text-transform: uppercase;
 }
 
-/* FORMULÁRIOS */
+.tabela tr:nth-child(even) {
+    background-color: #fff5f7;
+}
+
+.tabela tr:hover {
+    background-color: #fde6ea;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+/* ======== FORMULÁRIOS ======== */
 .formulario {
     display: inline-block;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f8d7da;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* ======== BOTÕES DE AÇÃO (EDITAR E EXCLUIR) ======== */
 
-/* Estilo geral dos botões */
+.formulario:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.15);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #a93226;
+    text-align: left;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f5b7b1;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 6px rgba(231, 76, 60, 0.3);
+}
+
+/* ======== BOTÕES DE AÇÃO (EDITAR E EXCLUIR) ======== */
 .btn {
     display: inline-block;
-    padding: 8px 14px;
-    margin: 4px;
+    padding: 10px 18px;
+    margin: 5px;
     font-size: 14px;
     font-weight: bold;
     color: white;
     text-decoration: none;
-    border-radius: 6px;
-    background-color: #007bff; /* azul padrão */
-    transition: background-color 0.3s ease;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Quando o mouse passa por cima */
-.btn:hover {
-    background-color: #0056b3; /* azul mais escuro */
+/* Editar (verde) */
+.btn-edit, .btn {
+    background: linear-gradient(135deg, #27ae60, #58d68d);
 }
 
-/* Botão de excluir */
+.btn-edit:hover, .btn:hover {
+    background: linear-gradient(135deg, #1e8449, #45b26b);
+    transform: scale(1.08);
+}
+
+/* Excluir (vermelho destaque) */
 .btn-delete {
-    background-color: #dc3545; /* vermelho */
+    background: linear-gradient(135deg, #ff4d6d, #c9184a);
 }
 
 .btn-delete:hover {
-    background-color: #a71d2a; /* vermelho escuro */
+    background: linear-gradient(135deg, #c9184a, #a4133c);
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(201, 24, 74, 0.3);
 }
 
-/* Botão de editar */
-.btn-edit {
-    background-color: #28a745; /* verde */
+/* ======== LINK VOLTAR ======== */
+.link-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    background: linear-gradient(135deg, #e74c3c, #ff758c);
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.25);
+    transition: all 0.3s ease;
 }
 
-.btn-edit:hover {
-    background-color: #1c7c31; /* verde escuro */
+.link-voltar:hover {
+    background: linear-gradient(135deg, #c0392b, #ff4d6d);
+    transform: scale(1.07);
+    box-shadow: 0 6px 12px rgba(192, 57, 43, 0.35);
+}
+
+/* ======== ANIMAÇÃO SUAVE NAS TRANSIÇÕES ======== */
+* {
+    transition: all 0.2s ease-in-out;
 }

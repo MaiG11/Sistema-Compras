@@ -49,7 +49,7 @@ public class ProdutoController {
     produto.setCategoria(categoriaExistente);
     produtoRepository.save(produto);
     return "redirect:/produto";
-}
+    }
 // Método para excluir um produto pelo ID
     @GetMapping("/produto/excluir/{id}")
     public String excluirProduto(@PathVariable Long id) {
