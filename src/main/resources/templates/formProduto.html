@@ -11,6 +11,11 @@
 
     <h1>Cadastrar Produto</h1>
 
+    <div th:if="${erro}" style="color: red; font-weight: bold;">
+         <p th:text="${erro}"></p>
+    </div>
+
+
    <form th:action="${produto.id} != null ? @{/produto/atualizar} : @{/produto/salvar}" method="post" th:object="${produto}">
     
     <input type="hidden" th:field="*{id}">

@@ -32,13 +32,18 @@ public class ProdutoService {
     // Salvar produto novo
     public Produto salvar(Produto produto) {
 
-        // 🔥 Validação do desafio: impedir nomes repetidos
+        // Validar nome repetido
         boolean nomeExiste = produtoRepository.findByNome(produto.getNome()).isPresent();
         if (nomeExiste) {
             throw new IllegalArgumentException("Já existe um produto com este nome!");
         }
 
-        // buscar categoria pelo ID (mesmo fluxo do seu controller)
+        // Validar preço negativo ou nulo
+        if (produto.getPreco() == null || produto.getPreco() < 0) {
+            throw new IllegalArgumentException("O preço não pode ser nulo ou negativo!");
+        }
+
+        // Buscar categoria pelo ID
         Long catId = produto.getCategoria() != null ? produto.getCategoria().getId() : null;
         if (catId == null) {
             throw new IllegalArgumentException("Categoria inválida");
@@ -60,11 +65,16 @@ public class ProdutoService {
     // Atualizar produto existente
     public Produto atualizar(Produto produto) {
 
-        // buscar produto no banco
+        // Buscar produto no banco
         Produto produtoExistente = produtoRepository.findById(produto.getId())
                 .orElseThrow(() -> new IllegalArgumentException("Produto inválido: " + produto.getId()));
 
-        // buscar categoria
+        // Validar preço negativo ou nulo na atualização
+        if (produto.getPreco() == null || produto.getPreco() < 0) {
+            throw new IllegalArgumentException("O preço não pode ser nulo ou negativo!");
+        }
+
+        // Buscar categoria
         Long catId = produto.getCategoria() != null ? produto.getCategoria().getId() : null;
         if (catId == null) {
             throw new IllegalArgumentException("Categoria inválida");
@@ -73,7 +83,7 @@ public class ProdutoService {
         Categoria categoriaExistente = categoriaRepository.findById(catId)
                 .orElseThrow(() -> new IllegalArgumentException("Categoria inválida"));
 
-        // atualizar campos
+        // Atualizar campos
         produtoExistente.setNome(produto.getNome());
         produtoExistente.setPreco(produto.getPreco());
         produtoExistente.setCategoria(categoriaExistente);
